@@ -101,7 +101,7 @@ function caixaTextoDestaque() {
       this.box01.style.borderWidth = "6px";
       this.box01.style.borderRadius = "10%"
 
-      this.box01.style.fontSize = "3em";
+      this.box01.style.fontSize = "2.5em";
       this.box01.style.fontWeight = "800";
       this.box01.style.clear = "both";
       this.box01.style.textAlign = "center";
@@ -117,7 +117,7 @@ function floatcaixaTextoDestaque() {
       this.box01.style.width = "0%";
       this.box01.style.height = "100%";
       this.box01.style.marginTop = "2%";
-      this.box01.style.marginBottom = "0%";     
+      this.box01.style.marginBottom = "5%";     
       this.box01.style.marginLeft = "3%";
       this.box01.style.paddingLeft = "1%";
       this.box01.style.paddingRight = "1%";
@@ -149,7 +149,7 @@ function textoExplicativo() {
       this.paragraphHanoi.style.textAlign = "justify";
       this.paragraphHanoi.style.textIndent = "5%";
       this.paragraphHanoi.style.lineHeight = "1.3em";
-      this.paragraphHanoi.style.fontSize = "2em";
+      this.paragraphHanoi.style.fontSize = "1.8em";
 }
 
 function titleTextHanoi() {
@@ -185,7 +185,7 @@ function titleTextHanoi() {
 
       textoExplicativo();
       this.paragraphHanoi.textContent = "Devido a limitação do tamanho das telas dos computadores, limitaremos o número de discos em 10 unidades. Escolha, a seguir, a demonstração da solução do quebra-cabeça com o número de discos desejados, dentro da limitação."
-      this.paragraphHanoi.style.marginBottom = "3%";
+      this.paragraphHanoi.style.marginBottom = "4%";
       screen.appendChild(paragraphHanoi);
 
       floatcaixaTextoDestaque();
@@ -235,7 +235,13 @@ function titleTextHanoi() {
       this.box01.style.backgroundColor = "#B8820F";
       this.box01.textContent = "10";
       screen.appendChild(box01);
+
+      textoExplicativo();
+      this.paragraphHanoi.textContent = ""
+      this.paragraphHanoi.style.marginTop = "4%";
+      screen.appendChild(paragraphHanoi);
 }
+
            
 function Tower(startBox) {                               // (CriacaoTorres01.js)Criação geral dos quadros
       this.box = createDiv();
