@@ -2,15 +2,16 @@ const towerHeight = "40px";                                  // Constante altura
 
 var screen;                                                  // (CriacaoTorres01.js) Criação da Varavel que contem a apresentacao
 
+
 //var movements = 0;
 
 var tower1 = new Tower(true);                               // Criação da torre 1 + Colocado true se é a posição original do inicio  
 var tower2 = new Tower(false);                              // Criação da torre 2 + Colocado false se não é a posição original do inicio 
 var tower3 = new Tower(false);                              // Criação da torre 3 + Colocado false se não é a posição original do inicio 
 
-//var selectedDisk;
-//var startMov;
-//var endMov;
+var selectedDisk;
+var startMov;
+var endMov;
 
 function createDiv() {                                       // Criacao de uma divisão igual a tag <div> no HTML
       var box = document.createElement ("div");              // Criacao da var 'box' para criação das torres A, B e C
@@ -91,7 +92,7 @@ function extraLargeDisk() {                                  // Criação Disco 
 
 function caixaTextoDestaque() {
       this.box01 = document.createElement ("div");
-      this.box01.style.width = "50%";
+      this.box01.style.width = "60%";
       this.box01.style.height = "100%";
       this.box01.style.marginTop = "1%";
       this.box01.style.marginBottom = "0%";     
@@ -101,7 +102,7 @@ function caixaTextoDestaque() {
       this.box01.style.borderWidth = "6px";
       this.box01.style.borderRadius = "10%"
 
-      this.box01.style.fontSize = "2.5em";
+      this.box01.style.fontSize = "200%";
       this.box01.style.fontWeight = "800";
       this.box01.style.clear = "both";
       this.box01.style.textAlign = "center";
@@ -118,14 +119,14 @@ function floatcaixaTextoDestaque() {
       this.box01.style.height = "100%";
       this.box01.style.marginTop = "2%";
       this.box01.style.marginBottom = "5%";     
-      this.box01.style.marginLeft = "3%";
-      this.box01.style.paddingLeft = "1%";
-      this.box01.style.paddingRight = "1%";
+      this.box01.style.marginLeft = "3.1%";
+      this.box01.style.paddingLeft = "1.3%";
+      this.box01.style.paddingRight = "1.3%";
       this.box01.style.border = "double #0000ff";
       this.box01.style.borderWidth = "6px";
       this.box01.style.borderRadius = "10%"
 
-      this.box01.style.fontSize = "3em";
+      this.box01.style.fontSize = "200%";
       this.box01.style.fontWeight = "800";
       this.box01.style.clear = "both";
       this.box01.style.textAlign = "center";
@@ -136,20 +137,49 @@ function floatcaixaTextoDestaque() {
       this.box01.style.color = "#FFF";
 }
 
-function textoExplicativo() {
-      this.paragraphHanoi = document.createElement("p");
-      this.paragraphHanoi.style.color = "#000";
-      this.paragraphHanoi.style.clear = "both";
-      this.paragraphHanoi.style.paddingTop = "0em";
-      this.paragraphHanoi.style.paddingBottom = "0em";
-      this.paragraphHanoi.style.marginLeft = "10%";
-      this.paragraphHanoi.style.marginRight = "10%";
-      this.paragraphHanoi.style.marginTop = "1%";
-      this.paragraphHanoi.style.marginBottom = "1%";
-      this.paragraphHanoi.style.textAlign = "justify";
-      this.paragraphHanoi.style.textIndent = "5%";
-      this.paragraphHanoi.style.lineHeight = "1.3em";
-      this.paragraphHanoi.style.fontSize = "1.8em";
+const mbObj = window.matchMedia("(max-width: 700px)");
+mbObj.addEventListener("load", marcos, false);
+
+function marcos(x) {
+      if (x.matches) {
+            this.box02 = document.createElement ("div");
+            this.box02.style.color = "#000000";
+      } else {
+            this.box02 = document.createElement ("div");
+            this.box02.style.color = "#ff0000";
+      };
+
+
+      /*if (window.matchMedia("screen and (max-width: 720px)").matches) {
+            this.box01 = document.createElement("div");
+            this.box01.style.color = "#000";
+            this.box01.style.clear = "both";
+            this.box01.style.textAlign = "justify";
+            this.box01.style.textIndent = "5%";
+            this.box01.style.paddingTop = "0em";
+            this.box01.style.paddingBottom = "0em";
+            this.box01.style.marginLeft = "10%";
+            this.box01.style.marginRight = "10%";
+            this.box01.style.marginTop = "1%";
+            this.box01.style.marginBottom = "1%";
+            this.box01.style.lineHeight = "150%";
+            this.box01.style.fontSize = "100px";
+      } else {
+            this.box01 = document.createElement("div");
+            this.box01.style.color = "#ff0000";
+            this.box01.style.clear = "both";
+            this.box01.style.textAlign = "justify";
+            this.box01.style.textIndent = "5%";
+            this.box01.style.paddingTop = "0em";
+            this.box01.style.paddingBottom = "0em";
+            this.box01.style.marginLeft = "10%";
+            this.box01.style.marginRight = "10%";
+            this.box01.style.marginTop = "1%";
+            this.box01.style.marginBottom = "1%";
+            this.box01.style.lineHeight = "150%";
+            this.box01.style.fontSize = "30px";
+      }*/
+
 }
 
 function titleTextHanoi() {
@@ -158,40 +188,39 @@ function titleTextHanoi() {
       this.box01.textContent = "Bem Vindos a explicação das Torres de Hanói";
       screen.appendChild(box01);
 
-      textoExplicativo();
-      this.paragraphHanoi.style.paddingTop = "0.5em";
-      this.paragraphHanoi.textContent = "As Torres de Hanói é um quebra-cabeça que consiste em uma base contendo três pinos, em um dos quais são dispostos alguns discos uns sobre os outros, em ordem crescente de diâmetro, de cima para baixo.";
-      screen.appendChild(paragraphHanoi);
+      marcos(mbObj);
+      this.box02.style.paddingTop = "0.5em";
+      this.box02.textContent = "As Torres de Hanói é um quebra-cabeça que consiste em uma base contendo três pinos, em um dos quais são dispostos alguns discos uns sobre os outros, em ordem crescente de diâmetro, de cima para baixo.";
+      screen.appendChild(box02);
 
-      textoExplicativo();
-      this.paragraphHanoi.textContent = "O problema consiste em passar todos os discos de um pino para outro qualquer, usando um dos pinos como auxiliar, de maneira que um disco maior nunca fique em cima de outro menor em nenhuma situação. O número de discos pode variar sendo que o mais simples contém apenas três.";
-       screen.appendChild(paragraphHanoi);
+      marcos(mbObj);
+      this.box02.textContent = "O problema consiste em passar todos os discos de um pino para outro qualquer, usando um dos pinos como auxiliar, de maneira que um disco maior nunca fique em cima de outro menor em nenhuma situação. O número de discos pode variar sendo que o mais simples contém apenas três.";
+      screen.appendChild(box02);
 
-      textoExplicativo();
-      this.paragraphHanoi.textContent = "Somente pode-se mover um disco por vez. Dependendo do número de discos, existe um número mínimo de movimentos para realizar o quebra-cabeça. Este número é fornecido pela expressão matemática = '2**(número de Pinos) -1'. Por exemplo:";
-      screen.appendChild(paragraphHanoi);
+      marcos(mbObj);
+      this.box02.textContent = "Somente pode-se mover um disco por vez. Dependendo do número de discos, existe um número mínimo de movimentos para realizar o quebra-cabeça. Este número é fornecido pela expressão matemática = '2**(número de discos) -1'. Por exemplo:";
+      screen.appendChild(box02);
 
-      textoExplicativo();
-      this.paragraphHanoi.textContent = "Se o número de Discos for igual a 3, temos 2**3 - 1 = 2 x 2 x 2 - 1 = 7 movimentos;";
-      screen.appendChild(paragraphHanoi);
+      marcos(mbObj);
+      this.box02.textContent = "Se o número de Discos for igual a 3, temos 2**3 - 1 = 2 x 2 x 2 - 1 = 7 movimentos;";
+      screen.appendChild(box02);
 
-      textoExplicativo();
-      this.paragraphHanoi.textContent = "Se o número de Discos for igual a 4, temos 2**4 - 1 = 2 x 2 x 2 x 2 - 1 = 15 movimentos;";
-      screen.appendChild(paragraphHanoi);
+      marcos(mbObj);
+      this.box02.textContent = "Se o número de Discos for igual a 4, temos 2**4 - 1 = 2 x 2 x 2 x 2 - 1 = 15 movimentos;";
+      screen.appendChild(box02);
 
-      textoExplicativo();
-      this.paragraphHanoi.textContent = "Se o número de Discos for igual a 5, temos 2**5 - 1 = 2 x 2 x 2 x 2 x 2 - 1 = 31 movimentos.";
-      screen.appendChild(paragraphHanoi);
+      marcos(mbObj);
+      this.box02.textContent = "Se o número de Discos for igual a 5, temos 2**5 - 1 = 2 x 2 x 2 x 2 x 2 - 1 = 31 movimentos.";
+      screen.appendChild(box02);
 
-      textoExplicativo();
-      this.paragraphHanoi.textContent = "Devido a limitação do tamanho das telas dos computadores, limitaremos o número de discos em 10 unidades. Escolha, a seguir, a demonstração da solução do quebra-cabeça com o número de discos desejados, dentro da limitação."
-      this.paragraphHanoi.style.marginBottom = "4%";
-      screen.appendChild(paragraphHanoi);
+      marcos(mbObj);
+      this.box02.textContent = "Devido a limitação do tamanho das telas dos computadores, limitaremos o número de discos em 10 unidades. Escolha, a seguir, a demonstração da solução do quebra-cabeça com o número de discos desejados, dentro da limitação."
+      this.box02.style.marginBottom = "4%";
+      screen.appendChild(box02);
 
       floatcaixaTextoDestaque();
       this.box01.style.marginLeft = "0%";
       this.box01.textContent = "3";
-
       screen.appendChild(box01);
 
       floatcaixaTextoDestaque();
@@ -236,10 +265,10 @@ function titleTextHanoi() {
       this.box01.textContent = "10";
       screen.appendChild(box01);
 
-      textoExplicativo();
-      this.paragraphHanoi.textContent = ""
-      this.paragraphHanoi.style.marginTop = "4%";
-      screen.appendChild(paragraphHanoi);
+      marcos(mbObj);
+      this.box02.textContent = "ab"
+      this.box02.style.marginTop = "4%";
+      screen.appendChild(box02);
 }
 
            
